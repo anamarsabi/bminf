@@ -1,0 +1,194 @@
+=================================================================
+Testing indices and search on 1 collections
+Creating ./index/toy
+Building index with <class '__main__.WhooshBuilder'>
+Collection: ./collections/toy/
+Done ( 0.19202613830566406 seconds )
+
+Reading index with <class '__main__.WhooshIndex'>
+Collection size: 4
+Vocabulary size: 39
+  Top 5 most frequent terms:
+	aa	9.0=9.0
+	bb	5.0=5.0
+	sleep	5.0=5.0
+	cc	3.0=3.0
+	die	2.0=2.0
+
+
+  Frequency of word "cc" in document 0 - ./collections/toy/d1.txt: 2
+  Total frequency of word "cc" in the collection: 3.0 occurrences over 2 documents
+  Docs containing the word'cc': 2
+Done ( 0.0 seconds )
+
+------------------------------
+Checking search results
+  WhooshSearcher for query 'aa dd'
+
+Done ( 0.06400442123413086 seconds )
+
+  VSMDotProductSearcher for query 'aa dd'
+4.0 	 ./collections/toy/d1.txt
+1.736965594166206 	 ./collections/toy/d2.txt
+1.0 	 ./collections/toy/d3.txt
+
+Done ( 0.0 seconds )
+
+  VSMCosineSearcher for query 'aa dd'
+1.0 	 ./collections/toy/d2.txt
+0.7427813527082074 	 ./collections/toy/d1.txt
+0.5773502691896258 	 ./collections/toy/d3.txt
+
+Done ( 0.007998943328857422 seconds )
+
+=================================================================
+Testing indices and search on 1 collections
+Creating ./index/urls
+Building index with <class '__main__.WhooshBuilder'>
+Collection: ./collections/urls.txt
+Done ( 5.346932649612427 seconds )
+
+Reading index with <class '__main__.WhooshIndex'>
+Collection size: 3
+Vocabulary size: 6048
+  Top 5 most frequent terms:
+	entropy	375.0=375.0
+	bias	201.0=201.0
+	system	154.0=154.0
+	displaystyle	138.0=138.0
+	heat	111.0=111.0
+
+
+  Frequency of word "wikipedia" in document 0 - https://en.wikipedia.org/wiki/Simpson's_paradox: 6
+  Total frequency of word "wikipedia" in the collection: 27.0 occurrences over 3 documents
+  Docs containing the word'wikipedia': 3
+Done ( 0.17600178718566895 seconds )
+
+------------------------------
+Checking search results
+  WhooshSearcher for query 'information probability'
+2.9255003492962617 	 https://en.wikipedia.org/wiki/Entropy
+2.762715052710944 	 https://en.wikipedia.org/wiki/Simpson's_paradox
+2.0990982409888708 	 https://en.wikipedia.org/wiki/Bias
+
+Done ( 0.016001462936401367 seconds )
+
+  VSMDotProductSearcher for query 'information probability'
+2.1879764911644646 	 https://en.wikipedia.org/wiki/Entropy
+1.301295829346397 	 https://en.wikipedia.org/wiki/Simpson's_paradox
+1.155870467654375 	 https://en.wikipedia.org/wiki/Bias
+
+Done ( 0.008002519607543945 seconds )
+
+  VSMCosineSearcher for query 'information probability'
+0.02447644612075157 	 https://en.wikipedia.org/wiki/Simpson's_paradox
+0.01743259012369188 	 https://en.wikipedia.org/wiki/Entropy
+0.009601412259736647 	 https://en.wikipedia.org/wiki/Bias
+
+Done ( 0.008002281188964844 seconds )
+
+=================================================================
+Testing indices and search on 1 collections
+Creating ./index/docs
+Building index with <class '__main__.WhooshBuilder'>
+Collection: ./collections/docs1k.zip
+Done ( 82.48067498207092 seconds )
+
+Reading index with <class '__main__.WhooshIndex'>
+Collection size: 998
+Vocabulary size: 118003
+  Top 5 most frequent terms:
+	family	175767.0=175767.0
+	tree	46705.0=46705.0
+	history	45744.0=45744.0
+	genealogy	45405.0=45405.0
+	surname	44965.0=44965.0
+
+
+  Frequency of word "seat" in document 0 - clueweb09-en0000-01-22977.html: 28
+  Total frequency of word "seat" in the collection: 1392.0 occurrences over 119 documents
+  Docs containing the word'seat': 119
+Done ( 2.032221555709839 seconds )
+
+------------------------------
+Checking search results
+  WhooshSearcher for query 'obama family tree'
+16.485499731264426 	 clueweb09-en0010-79-2218.html
+15.887791854254225 	 clueweb09-en0010-57-32937.html
+15.808952372971135 	 clueweb09-en0001-02-21241.html
+15.611476287511962 	 clueweb09-en0008-45-29117.html
+15.554087101921635 	 clueweb09-enwp01-59-16163.html
+
+Done ( 0.12001371383666992 seconds )
+
+  VSMDotProductSearcher for query 'obama family tree'
+49.57650786955148 	 clueweb09-enwp02-06-15081.html
+49.57650786955148 	 clueweb09-enwp01-59-16163.html
+49.56357386531169 	 clueweb09-enwp03-07-2998.html
+49.56357386531169 	 clueweb09-enwp03-00-6901.html
+49.5444467358989 	 clueweb09-enwp00-34-1973.html
+
+Done ( 0.9841055870056152 seconds )
+
+  VSMCosineSearcher for query 'obama family tree'
+0.28421789364376177 	 clueweb09-en0010-79-2218.html
+0.22631966869496392 	 clueweb09-en0009-30-2768.html
+0.224801913947326 	 clueweb09-en0001-02-21241.html
+0.22386305596546352 	 clueweb09-en0009-30-2441.html
+0.22349064069479563 	 clueweb09-en0009-30-2755.html
+
+Done ( 1.0001099109649658 seconds )
+
+=================================================================
+Testing indices and search on 3 collections
+Creating ./index/all_together
+Building index with <class '__main__.WhooshBuilder'>
+Collection: ./collections/toy/
+Collection: ./collections/urls.txt
+Collection: ./collections/docs1k.zip
+Done ( 93.33935332298279 seconds )
+
+Reading index with <class '__main__.WhooshIndex'>
+Collection size: 1005
+Vocabulary size: 120075
+  Top 5 most frequent terms:
+	family	175767.0=175767.0
+	tree	46705.0=46705.0
+	history	45767.0=45767.0
+	genealogy	45405.0=45405.0
+	surname	44965.0=44965.0
+
+
+  Frequency of word "seat" in document 0 - ./collections/toy/d1.txt: 0
+  Total frequency of word "seat" in the collection: 1392.0 occurrences over 119 documents
+  Docs containing the word'seat': 119
+Done ( 2.3259003162384033 seconds )
+
+------------------------------
+Checking search results
+  WhooshSearcher for query 'obama family tree'
+16.53156770383265 	 clueweb09-en0010-79-2218.html
+15.933507095387657 	 clueweb09-en0010-57-32937.html
+15.854480796324214 	 clueweb09-en0001-02-21241.html
+15.657778573500437 	 clueweb09-en0008-45-29117.html
+15.60098888215025 	 clueweb09-enwp01-59-16163.html
+
+Done ( 0.13601231575012207 seconds )
+
+  VSMDotProductSearcher for query 'obama family tree'
+49.78228397191034 	 clueweb09-enwp02-06-15081.html
+49.78228397191034 	 clueweb09-enwp01-59-16163.html
+49.76913762416183 	 clueweb09-enwp03-07-2998.html
+49.76913762416183 	 clueweb09-enwp03-00-6901.html
+49.74995616455944 	 clueweb09-enwp00-34-1973.html
+
+Done ( 1.3416545391082764 seconds )
+
+  VSMCosineSearcher for query 'obama family tree'
+0.2858689745214501 	 clueweb09-en0010-79-2218.html
+0.227434679048762 	 clueweb09-en0009-30-2768.html
+0.22581452713464267 	 clueweb09-en0001-02-21241.html
+0.22494602321789958 	 clueweb09-en0009-30-2441.html
+0.22457259902368373 	 clueweb09-en0009-30-2755.html
+
+Done ( 1.5311815738677979 seconds )
